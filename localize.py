@@ -33,7 +33,7 @@ class LocalizedHTML(HTMLParser):
             if value is not None and key in ['aria-label','title','content']:value=translate(value,self.lang)
             if key in ['src','href'] and value:
                 if value.startswith('assets/') or value in ['interface.css','theme.css','app.js','theme.js','locale-data.js','i18n.js']:value='/'+value
-            if key=='href' and value=='__CANONICAL__':value='https://anas-gara-devops.bladedgeode.chatgpt.site'+({'en':'/','fr':'/fr/','de':'/de/'}[self.lang])
+            if key=='href' and value=='__CANONICAL__':value='https://anas-gara-portfolio.vercel.app'+({'en':'/','fr':'/fr/','de':'/de/'}[self.lang])
             updated.append(' '+key if value is None else ' '+key+'="'+escape(value,quote=True)+'"')
         self.output.append('<'+tag+''.join(updated)+'>')
     def handle_startendtag(self,tag,attrs):
@@ -56,7 +56,7 @@ if 'theme.css' not in html:
     if 'theme.css' not in html:
         html=html.replace('<script src="/app.js" defer>','<link rel="stylesheet" href="/theme.css"><script src="/locale-data.js" defer></script><script src="/i18n.js" defer></script><script src="/app.js" defer>',1)
 if 'hreflang=' not in html:
-    links=''.join(f'<link rel="alternate" hreflang="{lang}" href="https://anas-gara-devops.bladedgeode.chatgpt.site{path}">' for lang,path in [('en','/'),('fr','/fr/'),('de','/de/'),('x-default','/')])
+    links=''.join(f'<link rel="alternate" hreflang="{lang}" href="https://anas-gara-portfolio.vercel.app{path}">' for lang,path in [('en','/'),('fr','/fr/'),('de','/de/'),('x-default','/')])
     html=html.replace('</head>','<link rel="canonical" href="__CANONICAL__">'+links+'</head>')
 # Canonical URLs get rebuilt on every run, including when English is the template.
 html=re.sub(r'<link rel="canonical" href="[^"]+">','<link rel="canonical" href="__CANONICAL__">',html)
