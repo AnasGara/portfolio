@@ -32,7 +32,7 @@ def footer(canvas,doc):
 for lang in ['EN','FR']:
  text=(assets/f'Anas-Gara-CV-{lang}.tex').read_text(encoding='utf-8')
  body=text.split(r'\section{',1)[1]
- email='anasgara@outlook.fr' if lang=='EN' else 'anasgara7@gmail.com'
+ email='anasgara7@gmail.com'
  story=[Paragraph('Anas Gara',styles['name']),Paragraph('DevOps Engineer | Cloud, CI/CD & Infrastructure as Code' if lang=='EN' else 'Ingénieur DevOps | Cloud, CI/CD & Infrastructure as Code',styles['role']),Paragraph(f'<a href="mailto:{email}" color="#62675d">{email}</a> · Ariana, Tunis<br/><a href="https://github.com/AnasGara" color="#62675d">github.com/AnasGara</a> · <a href="https://linkedin.com/in/anasgara" color="#62675d">linkedin.com/in/anasgara</a>',styles['contact'])]
  for section in re.split(r'\\section\{',body):
   title,content=section.split('}',1)

@@ -23,6 +23,8 @@ for family,name in fonts:
 sources=[('EN','4e1993a8-cf53-4750-83f5-f0d539b71ef8'),('FR','0e40db4a-0179-4a66-aea9-da53bf80c947')]
 for lang,folder in sources:
     source=Path('C:/Users/Utilisateur/.codex/attachments')/folder/'Texte collé.txt'
-    shutil.copyfile(source,root/f'Anas-Gara-CV-{lang}.tex')
+    target=root/f'Anas-Gara-CV-{lang}.tex'
+    if not target.exists():
+        shutil.copyfile(source,target)
 print('All static assets ready')
 

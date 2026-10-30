@@ -10,4 +10,4 @@ Run `npm run dev` and open http://127.0.0.1:4173. Run `npm run check` for a Java
 
 Project content is in `dist/app.js`; profile, experience, and contact content are in `dist/index.html`; the complete design and responsive layouts are in `dist/interface.css`. No runtime dependencies, API keys, tracking, or external fonts are required.
 
-Fonts in use: Space Grotesk, Manrope, and IBM Plex Mono (Open Font License), obtained through Google Fonts. Technology icons: Devicon (MIT). Original CV sources are included in `dist/assets/` alongside the formatted PDFs. Portfolio contact uses the email published on the GitHub profile; supplied CVs retain their respective contact details.
+Fonts in use: Space Grotesk, Manrope, and IBM Plex Mono (Open Font License), obtained through Google Fonts. Technology icons: Devicon (MIT). The updated English and French CV sources are included in `dist/assets/` alongside the formatted PDFs. Both CVs use `anasgara7@gmail.com`, list both professional roles as DevOps Engineer, and include German at A1.2. Regenerate the PDFs with `create_cv.py` using a Python environment with ReportLab and pypdf.
