@@ -1,0 +1,1 @@
+{"name":"anas-gara-portfolio","version":"1.0.0","private":true,"description":"Anas Gara — DevOps engineering portfolio","scripts":{"dev":"node server.mjs","check":"node --check dist/app.js"}}

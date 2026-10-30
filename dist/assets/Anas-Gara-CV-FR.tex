@@ -1,0 +1,286 @@
+\documentclass[9pt, letterpaper]{article}
+% Packages:
+\usepackage[T1]{fontenc}
+\usepackage[
+    ignoreheadfoot,
+    top=1.0 cm,
+    bottom=1.0 cm,
+    left=1.5 cm,
+    right=1.5 cm,
+    footskip=0.5 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={CV Anas GARA},
+    pdfauthor={Anas GARA},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Anas GARA - Page \thepage{} sur \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.08 cm
+}{
+    0.05 cm
+}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.03 cm,
+        parsep=0.03 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \begin{minipage}[t]{0.72\textwidth}
+    \setlength{\topsep}{0pt}\par\kern\topsep\raggedright\linespread{1.3}
+}{
+    \par\kern\topsep
+    \end{minipage}%
+    \begin{minipage}[t]{0.28\textwidth}
+    \raggedleft
+    \vspace{-0.3cm}
+    \includegraphics[width=3cm,height=2.6cm,keepaspectratio]{anasgara.jpg}
+    \end{minipage}
+}
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \begin{header}
+        \textbf{\fontsize{22 pt}{22 pt}\selectfont Anas GARA}
+
+        \vspace{0.05cm}
+        \large\textbf{Ingénieur DevOps} \normalsize\,|\, Certifié AWS Solution Architect
+
+        \mbox{\hrefWithoutArrow{mailto:anasgara7@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}anasgara7@gmail.com}}%
+        \kern 0.2 cm%
+        \AND%
+        \kern 0.2 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/anasgara}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}anasgara}}%
+        \kern 0.2 cm%
+        \AND%
+        \kern 0.2 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/anasgara}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}anasgara}}%
+        \kern 0.2 cm%
+        \AND%
+        \kern 0.2 cm%
+
+    \end{header}
+
+    \section{Profil}
+
+    \begin{onecolentry}
+    Ingénieur DevOps justifiant de 5 ans d'expérience (dont 3 ans en alternance) dans la conception de \textbf{pipelines CI/CD}, l'automatisation d'\textbf{infrastructures Cloud} (\textbf{AWS}), et le déploiement applicatif. Maîtrise avancée de \textbf{Docker}, \textbf{Kubernetes}, de l'\textbf{administration Linux} et de l'\textbf{Infrastructure as Code} (\textbf{Terraform}, \textbf{Ansible}). Orienté produit et sensibilisé aux enjeux \textbf{FinOps} (optimisation des coûts cloud). Habitué à interagir avec des parties prenantes internationales et à évoluer en environnement \textbf{Agile/Scrum}. Anglais professionnel courant (\textbf{TOEIC 940/990}).
+    \end{onecolentry}
+
+    \vspace{0.3 cm}
+
+
+    \section{Expériences Professionnelles}
+
+    \begin{twocolentry}{
+        \textit{Tunis, Tunisie}
+
+        \textit{Sep 2024 -- Présent}}
+        \textbf{Ingénieur DevOps}
+
+        \textit{G-Digital Partner}
+    \end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Conception de \textbf{pipelines CI/CD} (\textbf{GitHub Actions}, \textbf{GitLab CI}) pour automatiser les builds, tests et déploiements conditionnels ; réduction du temps de déploiement de 1 heure à 5 minutes (\textbf{-92\%}).
+        \item Automatisation de l'infrastructure Cloud via \textbf{Terraform} (\textbf{IaC}) sur plusieurs environnements avec gestion avancée des services \textbf{AWS (EC2, S3, RDS, Lambda, Route 53, WAF)}.
+        \item Conteneurisation avec \textbf{Docker} et orchestration sur \textbf{Kubernetes} : configuration du \textbf{Load Balancing}, \textbf{Ingress}, \textbf{Nginx}, gestion \textbf{DNS} et sécurisation via certificats \textbf{TLS}.
+        \item Implémentation du monitoring (\textbf{Prometheus}, \textbf{Grafana}) garantissant 99\% d'uptime ; intégration de \textbf{SonarQube} augmentant la couverture de code à 80\%.
+        \item Rédaction de scripts en \textbf{Python} et \textbf{Bash / Shell} pour automatiser les tâches d'administration \textbf{Linux} récurrentes.
+        \item Communication directe avec les clients pour traduire les besoins techniques en livrables (\textbf{rédaction technique documentaire}).
+    \end{highlights}
+\end{onecolentry}
+
+    \vspace{0.03 cm}
+    \begin{twocolentry}{
+        \textit{Tunis, Tunisie}
+
+        \textit{Sep 2021 -- Juin 2024}}
+        \textbf{Ingénieur Fullstack }
+
+\textit{Tanit De Carthage}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    
+\item Développement d'une solution métier \textbf{Java/Spring Boot + Angular} traitant \textbf{+50k opérations mensuelles par client} avec un temps de réponse < 200 ms.
+        \item Implémentation d'un \textbf{pipeline CI/CD} avec \textbf{Jenkins} en intégrant \textbf{Git} et \textbf{Ansible} pour standardiser les déploiements.
+        \item Administration d'infrastructures on-premise et virtuelles basées sur \textbf{VMware}.
+        \item Automatisation des sauvegardes via des scripts \textbf{Bash} : réduction des risques de perte de données de \textbf{40\%} et atteinte d'un RPO < 1h.
+\item Automatisation des tests atteignant \textbf{85\% de couverture}, limitant fortement les régressions post-QA.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.3 cm}
+
+\section{Projets Techniques Majeurs}
+
+\begin{twocolentry}{
+    \textit{G-Digital Partner}}
+    \textbf{Plateforme DBaaS Managée sur Cloud Souverain}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Conception d'une plateforme DBaaS permettant le provisionnement de bases de données (instances/clusters) avec gestion des ressources (CPU, RAM) soumise à validation administrateur.
+        \item Implémentation de stratégies de sauvegarde et de \textbf{réplication inter-datacenters} pour garantir la haute disponibilité.
+        \item Intégration d'une authentification sécurisée (MFA) et d'un système de facturation flexible (Pay-as-you-Go).
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{
+    \textit{Tanit De Carthage}}
+    \textbf{Infrastructure AWS Scalable as Code (IaC)}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Provisionnement d'une architecture multi-niveaux sur \textbf{AWS} via \textbf{Terraform}, incluant un \textbf{ALB} (Application Load Balancer) et des \textbf{Auto Scaling} Groups.
+        \item Mise en place d'un workflow GitOps pour planifier et appliquer automatiquement les modifications d'infrastructure.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15 cm}
+
+\begin{twocolentry}{
+    \textit{Tanit De Carthage}}
+    \textbf{Stack d'Observabilité et de Tracing}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Déploiement d'une stack complète (\textbf{Prometheus, Grafana, ELK/OpenSearch}) pour monitorer les performances (I/O, requêtes DB).
+        \item Intégration de \textbf{Zipkin} pour le traçage distribué des microservices applicatifs.
+        \item Configuration d'alertes automatisées pour la détection des failles de sécurité et des pics d'erreurs.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.3 cm}
+
+\section{Compétences Techniques}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{CI/CD :} GitLab CI, Jenkins, GitHub Actions (pipelines, builds/tests/déploiements automatisés).
+        \item \textbf{Infrastructure as Code \& Configuration :} Terraform, Ansible.
+        \item \textbf{Conteneurs \& Orchestration :} Docker, Kubernetes (déploiement en production \& auto-scaling).
+        \item \textbf{Cloud \& Virtualisation :} VMware, AWS (EC2, S3, RDS, Lambda, Route 53, ALB, Auto Scaling, WAF).
+        \item \textbf{Scripting \& Langages :} Python, Bash / Shell, Java.
+        \item \textbf{Linux \& Réseaux :} Administration Linux, Load Balancing, Ingress, Nginx, gestion DNS et certificats TLS.
+        \item \textbf{Monitoring \& Qualité :} Prometheus, Grafana, ELK/OpenSearch, SonarQube, Zipkin.
+        \item \textbf{Outils \& Méthodes :} Git, Méthodologie Agile/Scrum, Rédaction technique documentaire.
+    \end{highlights}
+\end{onecolentry}
+
+    \vspace{0.3 cm}
+
+
+    \section{Formation}
+
+    \begin{twocolentry}{\textit{Sep 2021 -- Jui 2024}}
+        \textbf{Université SESAME} -- \textit{Diplôme d'Ingénieur en Génie Logiciel / Spécialité DevOps}
+    \end{twocolentry}
+
+    \vspace{0.05cm}
+
+    \begin{twocolentry}{\textit{Sep 2018 -- Juin 2021}}
+        \textbf{Institut Supérieur d'Informatique et de Mathématiques} -- \textit{Licence Fondamentale en Informatique}
+    \end{twocolentry}
+
+
+    \vspace{0.3 cm}
+
+
+    \section{Certifications \& Langues}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Certifications :} AWS Certified Solutions Architect -- Associate (SAA-C03) \textbullet{} AWS Certified Cloud Practitioner (CLF-C02) \textbullet{} Microsoft Azure Fundamentals (AZ-900) \textbullet{} Google Cloud Fundamentals \textbullet{} ITS Java \textbullet{} ITS Database.
+            \item \textbf{Langues :} Anglais : Courant (\textbf{TOEIC 940/990}) \quad -- \quad Français : Courant \quad -- \quad Arabe : Langue maternelle.
+        \end{highlights}
+    \end{onecolentry}
+
+\end{document}

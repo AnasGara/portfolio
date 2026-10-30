@@ -1,0 +1,245 @@
+\documentclass[9pt, letterpaper]{article}
+% Packages:
+\usepackage[T1]{fontenc}
+\usepackage[
+    ignoreheadfoot,
+    top=1.0 cm,
+    bottom=1.0 cm,
+    left=1.5 cm,
+    right=1.5 cm,
+    footskip=0.5 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Anas GARA CV},
+    pdfauthor={Anas GARA},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Anas GARA - Page \thepage{} of \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.08 cm
+}{
+    0.05 cm
+}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.03 cm,
+        parsep=0.03 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \begin{minipage}[t]{0.72\textwidth}
+    \setlength{\topsep}{0pt}\par\kern\topsep\raggedright\linespread{1.3}
+}{
+    \par\kern\topsep
+    \end{minipage}%
+    \begin{minipage}[t]{0.28\textwidth}
+    \raggedleft
+    \vspace{-0.3cm}
+    \includegraphics[width=3cm,height=2.6cm,keepaspectratio]{anasgara.jpg}
+    \end{minipage}
+}
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \begin{header}
+        \textbf{\fontsize{22 pt}{22 pt}\selectfont Anas GARA}
+
+        \vspace{0.05cm}
+        \large\textbf{DevOps Engineer} \normalsize\,|\, CI/CD \textbullet{} Cloud (AWS) \textbullet{} Kubernetes \textbullet{} IaC
+
+        \mbox{\hrefWithoutArrow{mailto:anasgara@outlook.fr}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}anasgara@outlook.fr}}%
+        \kern 0.2 cm%
+        \AND%
+        \kern 0.2 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/anasgara}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}anasgara}}%
+        \kern 0.2 cm%
+        \AND%
+        \kern 0.2 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/anasgara}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}anasgara}}%
+        \kern 0.2 cm%
+        \AND%
+        \kern 0.2 cm%
+
+    \mbox{{\footnotesize\faMapMarker*}\hspace*{0.13cm}Ariana, Tunis -- Available for Full-Time Remote (Tunisia)}%
+    \end{header}
+
+    \section{Summary}
+
+    \begin{onecolentry}
+    DevOps Engineer with 5 years of experience building and maintaining \textbf{CI/CD pipelines}, automating \textbf{cloud infrastructure} (\textbf{AWS}), and deploying applications across dev, staging, and production environments. Hands-on with \textbf{Docker} and \textbf{Kubernetes}, \textbf{Infrastructure as Code} (\textbf{Terraform}, \textbf{Ansible}), strong \textbf{Linux and networking} fundamentals, and \textbf{monitoring} of system performance, availability, and security (Prometheus, Grafana). Experienced in remote-friendly Agile/Scrum teams; fluent in \textbf{English} (\textbf{TOEIC 940/990}) and French, comfortable communicating directly with international clients.
+\end{onecolentry}
+
+    \vspace{0.3 cm}
+
+
+    \section{Professional Experience}
+
+    \begin{twocolentry}{
+        \textit{Ariana, Tunis}
+
+        \textit{Sep 2024 -- Present}}
+        \textbf{DevOps Engineer}
+
+        \textit{G-Digital Partner}
+    \end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Built and maintained \textbf{CI/CD pipelines} (\textbf{GitHub Actions}, \textbf{Jenkins}) automating build, test, and deployment on \textbf{AWS EC2}; cut deployment time from 1 hour (manual) to 5 minutes -- a \textbf{92\%} reduction.
+        \item Built parallelized test/deploy jobs with branch-based conditional deployment, cutting pipeline run time by 60\%.
+        \item Managed and automated cloud infrastructure with \textbf{Terraform} (\textbf{Infrastructure as Code}) across 3 environments (dev, staging, production), reducing provisioning time by 15\%.
+        \item Containerized the full application stack with \textbf{Docker} and deployed on \textbf{Kubernetes}, scaling 7 microservices to handle 20\% more traffic.
+        \item Deployed and maintained applications across dev, staging, and production, delivering 4 releases with zero rollback incidents.
+        \item Monitored system performance and availability with \textbf{Prometheus} and \textbf{Grafana} across all 8 services (99\% uptime); integrated \textbf{SonarQube} into CI/CD, improving code coverage to 80\%.
+        \item Diagnosed and resolved production incidents through root-cause analysis and preventive fixes, reducing mean time to resolution (MTTR) by 90\%.
+        \item Worked in a 7-person Agile/Scrum team across 6 sprints.
+    \end{highlights}
+\end{onecolentry}
+
+    \vspace{0.03 cm}
+    \begin{twocolentry}{
+        \textit{Ariana, Tunis}
+
+        \textit{Sept 2021 -- Jun 2024}}
+        \textbf{DevOps Engineer}
+
+\textit{Tanit De Carthage}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Implemented a \textbf{CI/CD pipeline} with \textbf{Jenkins} to automate build, testing, and artifact management, integrating \textbf{Git} and \textbf{Ansible} for reliable, automated deployments.
+        \item Deployed \textbf{Prometheus \& Grafana} dashboards for \textbf{real-time production monitoring}, enabling proactive detection of application health issues and incidents.
+        \item Automated unit and integration testing using \textbf{JUnit} and \textbf{Mockito}, achieving \textbf{85\%+ test coverage} and reducing regressions identified during QA.
+        \item Optimized processing workflows through automation and pipeline optimization, yielding a \textbf{30\% performance improvement}.
+        \item Designed and developed an internal tool (\textbf{Spring Boot} backend, \textbf{Angular} frontend) within an Agile/Scrum team.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.3 cm}
+
+\section{Technical Skills}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{CI/CD:} \textbf{Jenkins}, \textbf{GitLab CI/CD}, \textbf{GitHub Actions} (pipeline design, automated build/test/deploy, branch-based deployments)
+        \item \textbf{Linux \& Networking:} Linux administration, Bash scripting, load balancing, DNS, TLS/certificates, ingress/reverse proxy, firewall \& security-group configuration (Nginx, AWS ALB, Route 53)
+        \item \textbf{Containers \& Orchestration:} \textbf{Docker}, \textbf{Kubernetes} (production deployment \& scaling)
+        \item \textbf{Cloud:} \textbf{AWS} (EC2, S3, RDS, Lambda, Route 53, CloudFront, ALB/Auto Scaling, WAF); working knowledge of Azure and GCP (certified at fundamentals level)
+        \item \textbf{Infrastructure as Code \& Automation:} Terraform, Ansible, Python, Bash
+        \item \textbf{Monitoring \& Security:} Prometheus, Grafana, Zipkin, ELK/OpenSearch (familiar), SonarQube, WAF, security groups
+        \item \textbf{Development \& Methodology:} Python, Java, Spring Boot, JavaScript/TypeScript, SQL, Git, TDD, Agile/Scrum, technical documentation
+    \end{highlights}
+\end{onecolentry}
+
+
+    \vspace{0.3 cm}
+
+
+    \section{Education}
+
+    \begin{twocolentry}{\textit{Sept 2021 -- Jul 2024}}
+        \textbf{SESAME University} -- \textit{Software Engineering Degree: Software Engineering / DevOps}
+    \end{twocolentry}
+
+    \vspace{0.05cm}
+
+    \begin{twocolentry}{\textit{Sept 2018 -- Jun 2021}}
+        \textbf{Higher Institute of Computer Science and Math.} -- \textit{BSc in Computer Science}
+    \end{twocolentry}
+
+
+    \vspace{0.3 cm}
+
+
+    \section{Certifications \& Languages}
+
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Certifications:} AWS Certified Solutions Architect -- Associate (SAA-C03), AWS Certified Cloud Practitioner (CLF-C02) \textbullet{} Microsoft Azure Fundamentals (AZ-900) \textbullet{} Google Cloud Fundamentals \textbullet{} ITS Java \textbullet{} ITS Database
+            \item \textbf{Languages:} English: Fluent (\textbf{TOEIC 940/990}) \quad -- \quad French: Fluent \quad -- \quad Arabic: Native
+        \end{highlights}
+    \end{onecolentry}
+
+\end{document}
