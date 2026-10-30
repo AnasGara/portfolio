@@ -8,6 +8,12 @@ The credentials section contains the 12 public badges listed on Anas Gara's Cred
 
 Run `npm run dev` and open http://127.0.0.1:4173. Run `npm run check` for a JavaScript syntax check. The complete deployable site is in `dist/` and can also be hosted on any static hosting service.
 
+English is the main page at `/`; translated French and German versions are at `/fr/` and `/de/`. The language selector preserves the current section. Translations cover page content, navigation, accessible labels, project dialogs, filters, and operational diagrams. Issued credential names and product names retain their official names. English and French CVs remain available on all three versions.
+
+The theme toggle switches between the dark charcoal/cyan design and the original cream/orange light palette with serif accents. The choice is saved locally and applied before rendering on every language route. No cookies or server storage are used.
+
+After editing the English page or `content/translations.json`, run `python localize.py` to regenerate the static translated pages and shared locale data. Common interactive UI lives in `dist/i18n.js` and `dist/theme.js`; theme styling is in `dist/theme.css`.
+
 Project content is in `dist/app.js`; profile, experience, and contact content are in `dist/index.html`; the complete design and responsive layouts are in `dist/interface.css`. No runtime dependencies, API keys, tracking, or external fonts are required.
 
 Fonts in use: Space Grotesk, Manrope, and IBM Plex Mono (Open Font License), obtained through Google Fonts. Technology icons: Devicon (MIT). The updated English and French CV sources are included in `dist/assets/` alongside the formatted PDFs. Both CVs use `anasgara7@gmail.com`, list both professional roles as DevOps Engineer, and include German at A1.2. Regenerate the PDFs with `create_cv.py` using a Python environment with ReportLab and pypdf.
