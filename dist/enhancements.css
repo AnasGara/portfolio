@@ -1,0 +1,131 @@
+/* A larger, more expressive type scale. */
+body{font-size:18px}
+.header{position:sticky;top:0;z-index:30;background:rgb(245 243 237 / 93%);backdrop-filter:blur(18px);height:96px}
+.header nav{font-size:14px;gap:27px}
+.header nav a.is-current{color:var(--accent)}
+.wordmark{font-size:25px}
+.eyebrow{font-size:12px;letter-spacing:1px}
+.hero{grid-template-columns:1.2fr 1fr;padding-top:82px;gap:32px}
+h1{font-size:clamp(72px,7.7vw,110px);letter-spacing:-6px}
+.hero-intro{font-size:19px;line-height:1.75;max-width:560px}
+.hero-intro .desktop-break{display:none}
+.button{font-size:15px;padding:18px 24px}
+.text-link{font-size:14px}
+.hero-location{font-size:11px;line-height:1.8;flex-wrap:wrap}
+.hero-actions{margin-block:35px}
+.art-top{font-size:10px}
+.art-caption{font-size:12px;min-height:66px}
+.stage-indicator{font-size:10px}
+.hero-bottom{font-size:10px}
+.impact{padding-block:42px}
+.impact-label .eyebrow{font-size:11px}
+.impact-source{font-size:11px;max-width:180px}
+.metric strong{font-size:60px}
+.metric p{font-size:15px;line-height:1.6}
+.metric>span{font-size:12px;line-height:1.7}
+h2,.section-heading h2{font-size:clamp(48px,4.8vw,68px)}
+.section-heading>p,.credentials-intro p{font-size:16px;line-height:1.8;max-width:430px}
+.filters button{font-size:13px;padding:10px 16px}
+.filters sup{font-size:9px}
+.github-link{font-size:14px}
+.project-visual{height:300px;transition:box-shadow .3s,border-color .3s}
+.project-visual:hover{box-shadow:0 12px 35px #27321d0e;border-color:#b6c1a5}
+.visual-label{font-size:10px}
+.project-category,.project-number{font-size:10px;line-height:1.8}
+.project-card h3{font-size:27px;line-height:1.35;margin-block:12px}
+.project-card p{font-size:16px;line-height:1.8;max-width:540px}
+.tags{gap:8px}
+.tags span{font-size:11px;padding:7px 10px}
+.work-note{font-size:12px}
+.about-intro h2{font-size:clamp(43px,4vw,57px)}
+.about-copy .lead{font-size:27px}
+.about-copy>p{font-size:17px;line-height:1.85}
+.about-copy .desktop-break{display:none}
+.about-signature{font-size:44px}
+.about-signature span{font-size:12px}
+.about-facts{font-size:12px}
+.about-facts b{font-size:13px}
+.experience-row{grid-template-columns:205px 1fr 24px;padding-block:39px}
+.experience-date{font-size:12px}
+.experience-date span{font-size:12px;line-height:1.8}
+.job-heading h3{font-size:27px;line-height:1.35}
+.job-heading a{font-size:13px}
+.job-heading{align-items:flex-start;flex-direction:column;gap:10px}
+.experience-body>p,.experience-body li{font-size:16px;line-height:1.85}
+.experience-body li{margin-bottom:9px}
+.experience-index{font-size:12px}
+.tool-heading{font-size:12px;line-height:1.7}
+.tool img{width:36px;height:36px}
+.tool>span{font-size:11px}
+.tool-icons{gap:20px}
+.tool-group{padding:28px}
+.tool-group p{font-size:13px;line-height:1.9}
+.education{border-top:1px solid var(--line);padding-block:40px}
+.education h3{font-size:15px}.education h3>span{font-size:13px}
+.education p{font-size:12px}.education p>span{font-size:11px}
+.contact-inner h2{font-size:clamp(54px,6vw,82px)}
+.contact-availability{font-size:11px}
+.email-wrap>a{font-size:24px}
+.social-links{font-size:13px;gap:20px;flex-wrap:wrap}
+.contact-bottom{gap:30px}.footer{font-size:12px}.footer>a:last-child{font-size:11px}
+.dialog-category{font-size:11px}#dialog-title{font-size:38px}
+.dialog-description{font-size:16px}.dialog-details{font-size:15px;line-height:1.8}
+.dialog-boundary{font-size:13px}.dialog-actions .button{font-size:13px}
+
+/* Official earned credentials; each card opens its individual Credly record. */
+.credentials-section{scroll-margin-top:15px}
+.credentials-intro p{color:var(--muted);margin:0 0 20px}
+.credential-toolbar{margin:37px 0 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.credential-filters{display:flex;gap:6px;flex-wrap:wrap}
+.credential-filters button{background:transparent;padding:10px 15px;border-radius:4px;font-size:13px;color:var(--muted);transition:background .2s,color .2s}
+.credential-filters button.active{background:var(--ink);color:var(--paper)}
+.credential-filters button:hover:not(.active){background:var(--sage);color:var(--ink)}
+.credential-filters sup{font-family:var(--mono);font-size:9px;padding-left:5px}
+#credential-count{font:11px var(--mono);white-space:nowrap;color:var(--muted)}
+.credential-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.credential-card{position:relative;display:grid;grid-template-columns:86px 1fr;gap:19px;align-items:center;padding:25px 23px 18px;border:1px solid var(--line);background:#eeeee6;border-radius:6px;transition:transform .3s,background .3s,border-color .3s,box-shadow .3s;min-height:225px}
+.credential-card[hidden]{display:none}
+.credential-card:hover{transform:translateY(-6px);background:#e9ecdf;border-color:#abb69a;box-shadow:0 12px 24px #303d2310}
+.credential-card:nth-child(-n+3){background:#e8ebe0;border-color:#cdd5c0}
+.credential-image{display:grid;place-items:center;align-self:center}
+.credential-image img{width:86px;height:100px;object-fit:contain;transition:transform .4s}
+.credential-card:hover .credential-image img{transform:rotate(-4deg) scale(1.05)}
+.credential-type{font:9px var(--mono);line-height:1.7;letter-spacing:.4px;color:var(--muted);text-transform:uppercase}
+.credential-copy h3{font-size:16px;line-height:1.5;letter-spacing:-.35px;font-weight:600;margin:8px 0 11px}
+.credential-date{font:10px var(--mono);color:#6a725f;line-height:1.8}
+.credential-verify{grid-column:1/-1;border-top:1px solid #d4daca;padding-top:12px;font-size:11px;display:flex;align-items:center;justify-content:space-between;color:var(--muted)}
+.credential-verify>span{font-size:18px;color:var(--accent);transition:transform .2s}
+.credential-card:hover .credential-verify>span{transform:translate(2px,-2px)}
+.credential-source{font-size:12px;color:var(--muted);line-height:1.9;margin-top:22px}
+.credential-source a{color:var(--accent);border-bottom:1px solid #c2553544}
+
+/* Motion follows the content: a moving delivery route and scroll-led entrances. */
+.reading-progress{position:fixed;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(var(--reading-progress,0));transform-origin:left;z-index:60;pointer-events:none}
+.architecture-route{animation:route-flow 24s linear infinite}
+.route-two{animation-direction:reverse}
+.block-code{animation:block-float 6s ease-in-out infinite}
+.block-build{animation:block-float 6s ease-in-out -2s infinite}
+.block-cloud{animation:block-float 6s ease-in-out -4s infinite}
+.art-block:hover,.art-block:focus-visible,.art-block.is-selected{animation-play-state:paused;filter:drop-shadow(0 6px 5px #5c6b3920)}
+.route-dot{offset-path:path('M110 245 L110 205 L245 131 L390 211 L390 257 L270 326 L110 245');offset-rotate:0deg;cx:0;cy:0;animation:packet-travel 14s linear infinite}
+.status-dot{animation:status-breathe 3.8s ease-in-out infinite}
+.system-art{transition:transform .35s ease-out;transform:perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))}
+.tiny-cross{animation:cross-turn 18s linear infinite}
+.hero-copy h1{animation:hero-arrive .85s cubic-bezier(.2,.65,.3,1) both}
+.hero-intro,.hero-actions{animation:hero-arrive .8s .12s cubic-bezier(.2,.65,.3,1) both}
+.reveal-ready{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.65,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.reveal-ready.is-revealed{opacity:1;transform:translateY(0)}
+.metric strong{display:inline-block}.metric.is-counting strong{font-variant-numeric:tabular-nums}
+@keyframes route-flow{to{stroke-dashoffset:-180}}
+@keyframes block-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes packet-travel{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes status-breathe{0%,100%{box-shadow:0 0 0 3px #65846514}50%{box-shadow:0 0 0 6px #65846508}}
+@keyframes cross-turn{to{transform:rotate(360deg)}}
+@keyframes hero-arrive{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1500px){h1{font-size:114px}.architecture{max-height:450px}}
+@media(max-width:1150px){.header nav{gap:20px;font-size:13px}.nav-contact{padding:12px 14px}.nav-contact span{margin-left:12px}.hero-intro{font-size:17px}.hero-location{font-size:10px}.hero-actions{gap:20px}.button{font-size:14px;padding:16px 20px}.text-link{font-size:13px}.about-grid{gap:45px}.tool-heading{font-size:11px}.tool-icons{gap:16px}.tool-group{padding:23px 20px}.credential-card{grid-template-columns:65px 1fr;gap:14px;padding:20px 17px 17px}.credential-image img{width:65px;height:85px}.credential-copy h3{font-size:15px}.credential-date{font-size:9px}.contact-bottom{align-items:flex-start;flex-direction:column}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:55px}.hero-copy{max-width:700px}h1{font-size:clamp(76px,11vw,100px)}.hero-intro{font-size:20px;max-width:600px}.hero-actions{gap:30px}.hero-location{font-size:12px}.system-art{width:min(100%,620px);margin:25px auto 0}.architecture{max-height:350px}.hero-bottom{margin-top:10px}.about-grid{grid-template-columns:1fr;gap:35px}.about-intro h2{font-size:52px}.about-signature{margin-top:25px}.about-copy>p{font-size:17px}.about-facts{justify-content:flex-start;gap:45px}.experience-row{grid-template-columns:155px 1fr}.experience-index{display:none}.experience-date{font-size:11px}.experience-date span{font-size:11px}.project-card h3{font-size:24px}.project-card p{font-size:15px}.project-category{font-size:9px}.project-visual{height:235px}.section-heading>p{font-size:15px}.credential-grid{grid-template-columns:repeat(2,1fr)}.credential-card{grid-template-columns:78px 1fr;padding:22px;min-height:220px}.credential-image img{width:78px;height:95px}.credential-toolbar{align-items:flex-start;flex-direction:column;gap:16px}.credentials-intro p{font-size:15px}.education{grid-template-columns:1fr 1fr}.education>.eyebrow{grid-column:1/-1}.social-links{font-size:14px}.metric strong{font-size:52px}.metric p{font-size:13px}.metric>span{font-size:10px}.impact{gap:22px}.metric{padding-left:22px}.impact-label .eyebrow{font-size:9px}}
+@media(max-width:900px){.header{width:calc(100% - 40px);height:82px}.menu-toggle{display:flex;flex-direction:column;gap:6px;background:none;padding:10px}.menu-toggle span{height:1px;background:var(--ink);width:24px;transition:transform .2s}.menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}.menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}.header nav{display:none;position:absolute;top:81px;left:-20px;right:-20px;background:var(--paper);padding:25px;box-shadow:0 12px 15px #262c2710;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:23px;font-size:16px}.header nav.is-open{display:flex}.nav-contact{margin:0;display:flex;justify-content:space-between}.impact{grid-template-columns:repeat(3,1fr)}.impact-label{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center}.impact-label .eyebrow{font-size:10px}.impact-label .eyebrow br{display:none}.impact-source{font-size:10px;text-align:right}.metric:nth-child(2){border-left:0;padding-left:0}.section-heading{align-items:flex-start;flex-direction:column;gap:23px}.section-heading h2{font-size:54px}.section-heading>.text-link{margin-bottom:0}.toolbox-grid{grid-template-columns:repeat(2,1fr)}.tool-heading{font-size:11px}.tool-group p{font-size:13px}.about-intro h2{font-size:47px}.experience-row{grid-template-columns:1fr;gap:20px}.experience-date{display:flex;justify-content:space-between;gap:20px}.experience-date span{margin:0}.job-heading h3{font-size:26px}.job-heading a{font-size:14px}.contact-inner h2{font-size:60px}.footer>span{font-size:11px}.contact-availability{font-size:10px}.contact-arrow{top:25px;width:65px;height:65px;font-size:40px}.contact-inner h2{padding-right:50px}}
+@media(max-width:600px){.section-shell{width:calc(100% - 44px)}.wordmark{font-size:23px}.eyebrow,.hero .eyebrow{font-size:10px;letter-spacing:.6px}h1{font-size:clamp(59px,14vw,82px);letter-spacing:-4px}.hero{padding-top:39px}.hero-intro{font-size:17px;line-height:1.85}.hero-actions{gap:22px;margin-block:27px}.hero-actions .button{font-size:13px;padding:16px 19px;gap:22px}.hero-actions .text-link{font-size:12px;gap:9px}.hero-location{font-size:10px;gap:7px}.system-art{margin-top:25px}.art-top{font-size:9px}.architecture{max-height:300px}.art-caption{font-size:11px;line-height:1.8;gap:12px}.stage-indicator{font-size:9px}.hero-bottom{font-size:8px;line-height:1.7;gap:20px}.hero-bottom a{font-size:8px}.impact{gap:12px;padding-block:30px}.impact-label .eyebrow{font-size:8px;max-width:190px}.impact-source{font-size:8px;max-width:110px}.metric{padding-left:13px}.metric strong{font-size:43px}.metric strong>span{font-size:22px}.metric p{font-size:11px;line-height:1.6}.metric>span{font-size:9px}.section-pad{padding-block:60px}.section-heading h2{font-size:46px;letter-spacing:-2.5px}.section-heading>p{font-size:16px}.work-toolbar{gap:10px;align-items:flex-start}.filters{gap:3px}.filters button{font-size:11px;padding:9px 10px;min-height:38px}.filters sup{font-size:8px}.github-link{font-size:11px;padding-top:10px}.project-visual{height:245px}.visual-label{font-size:9px}.project-category{font-size:9px;max-width:85%}.project-number{font-size:9px}.project-card h3{font-size:25px}.project-card p{font-size:16px;line-height:1.8}.tags span{font-size:10px;padding:6px 9px}.project-grid{gap:36px}.work-note{font-size:11px}.about-intro h2{font-size:43px}.about-copy .lead{font-size:25px}.about-copy>p{font-size:17px}.about-signature{font-size:39px}.about-signature span{font-size:11px}.about-facts{gap:20px;justify-content:space-between;font-size:11px}.about-facts b{font-size:11px}.experience-date,.experience-date span{font-size:10px}.job-heading h3{font-size:25px}.experience-body>p,.experience-body li{font-size:15px}.experience-body ul{padding-left:17px}.experience-body li{padding-left:4px}.tool-group{padding:23px 15px}.tool-heading{font-size:10px;letter-spacing:0;line-height:1.8}.tool-icons{gap:16px 10px}.tool img{width:32px;height:32px}.tool>span{font-size:10px}.tool-group p{font-size:12px}.credential-grid{grid-template-columns:1fr;gap:15px}.credential-card{grid-template-columns:90px 1fr;padding:23px;min-height:220px;gap:20px}.credential-image img{width:90px;height:110px}.credential-copy h3{font-size:18px;line-height:1.5}.credential-type{font-size:10px}.credential-date{font-size:11px}.credential-verify{font-size:12px;padding-top:14px}.credential-filters{gap:5px}.credential-filters button{font-size:12px;padding:10px 12px;min-height:40px}.credentials-intro p{font-size:16px}.credential-source{font-size:11px}.education{grid-template-columns:1fr;gap:25px}.education h3{font-size:15px}.education h3>span{font-size:13px;display:block}.education p{font-size:12px;gap:17px}.education p>span{font-size:10px}.contact-top{align-items:flex-start}.contact-availability{font-size:8px;max-width:155px;line-height:1.8}.contact-inner h2{font-size:clamp(42px,10.2vw,59px);padding-right:0;padding-bottom:85px}.contact-arrow{top:auto;bottom:0;width:57px;height:57px;font-size:35px}.contact-bottom{gap:25px}.email-wrap>a{font-size:20px}.social-links{font-size:13px;gap:20px}.footer{font-size:11px}.footer>span{font-size:10px}.footer>a:last-child{font-size:9px}.dialog-category{font-size:10px}#dialog-title{font-size:31px}.dialog-description{font-size:15px}.dialog-details{font-size:14px}.dialog-boundary{font-size:12px}.dialog-actions .button{font-size:12px}#copy-status{left:0;top:100%}}
+@media(prefers-reduced-motion:reduce){.reveal-ready{opacity:1;transform:none}.system-art{transform:none}.reading-progress{transition:none}.route-dot{offset-path:none;cx:245;cy:240}*,*:before,*:after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.credential-card.is-revealed:hover{transform:translateY(-6px)}

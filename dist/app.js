@@ -25,3 +25,87 @@ const menuToggle=document.querySelector('.menu-toggle');const nav=document.query
 const stages=['Code / Start with the application and its needs.','Automate / Build, test, and release repeatably.','Operate / Scale, observe, and keep improving.'];let stage=-1;const selectStage=n=>{stage=n;document.querySelectorAll('[data-stage]').forEach(el=>el.classList.toggle('is-selected',Number(el.dataset.stage)===n));document.querySelector('#stage-caption').textContent=stages[n];document.querySelector('.stage-indicator').textContent=`0${n+1} / 03`;};document.querySelectorAll('[data-stage]').forEach(el=>{el.addEventListener('click',()=>selectStage(Number(el.dataset.stage)));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectStage(Number(el.dataset.stage));}});});document.querySelector('#next-stage').addEventListener('click',()=>selectStage((stage+1)%3));
 let copyTimer;document.querySelector('.copy-email').addEventListener('click',async()=>{const status=document.querySelector('#copy-status');clearTimeout(copyTimer);try{await navigator.clipboard.writeText('anasgara7@gmail.com');status.textContent='Copied!';}catch{status.textContent='Select email to copy';const range=document.createRange();range.selectNodeContents(document.querySelector('.email-wrap>a'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);}copyTimer=setTimeout(()=>status.textContent='',2800);});
 
+// Credential cards remain useful as ordinary verification links without JavaScript.
+const credentialCards=[...document.querySelectorAll('.credential-card')];
+document.querySelectorAll('[data-credential-filter]').forEach(button=>button.addEventListener('click',()=>{
+  const provider=button.dataset.credentialFilter;
+  document.querySelectorAll('[data-credential-filter]').forEach(control=>{
+    const selected=control===button;
+    control.classList.toggle('active',selected);
+    control.setAttribute('aria-pressed',String(selected));
+  });
+  let visible=0;
+  credentialCards.forEach(card=>{
+    card.hidden=provider!=='all'&&card.dataset.provider!==provider;
+    if(!card.hidden){visible++;card.classList.add('is-revealed');}
+  });
+  document.querySelector('#credential-count').textContent=`${visible} credential${visible===1?'':'s'}`;
+}));
+
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+const art=document.querySelector('.system-art');
+art.addEventListener('pointermove',event=>{
+  if(reducedMotion.matches||event.pointerType!=='mouse')return;
+  const bounds=art.getBoundingClientRect();
+  art.style.setProperty('--tilt-x',`${-((event.clientY-bounds.top)/bounds.height-.5)*5}deg`);
+  art.style.setProperty('--tilt-y',`${((event.clientX-bounds.left)/bounds.width-.5)*5}deg`);
+});
+art.addEventListener('pointerleave',()=>{art.style.removeProperty('--tilt-x');art.style.removeProperty('--tilt-y');});
+
+let scrollFrame=0;
+function updateReadingProgress(){
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  document.documentElement.style.setProperty('--reading-progress',String(max>0?window.scrollY/max:0));
+  scrollFrame=0;
+}
+window.addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(updateReadingProgress);},{passive:true});
+window.addEventListener('resize',updateReadingProgress);
+updateReadingProgress();
+
+if('IntersectionObserver' in window){
+  const navObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      const link=document.querySelector(`.header nav a[href="#${entry.target.id}"]`);
+      if(link)link.classList.toggle('is-current',entry.isIntersecting);
+    });
+  },{rootMargin:'-20% 0px -55% 0px'});
+  document.querySelectorAll('main section[id]').forEach(section=>navObserver.observe(section));
+
+  if(!reducedMotion.matches){
+    const revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        entry.target.classList.add('is-revealed');
+        revealObserver.unobserve(entry.target);
+      });
+    },{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+    document.querySelectorAll('.section-heading,.project-card,.about-intro,.about-copy,.experience-row,.tool-group,.credential-card,.education>div,.contact-inner').forEach((el,index)=>{
+      el.classList.add('reveal-ready');
+      el.style.setProperty('--reveal-delay',`${(index%3)*65}ms`);
+      revealObserver.observe(el);
+    });
+    const metricObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        const metric=entry.target;
+        const textNode=metric.querySelector('strong').firstChild;
+        const target=Number(textNode.nodeValue.trim());
+        const start=performance.now();
+        metric.classList.add('is-counting');
+        const frame=now=>{
+          const progress=Math.min((now-start)/1100,1);
+          textNode.nodeValue=String(Math.round(target*(1-Math.pow(1-progress,3))));
+          if(progress<1)requestAnimationFrame(frame);
+          else metric.classList.remove('is-counting');
+        };
+        requestAnimationFrame(frame);
+        metricObserver.unobserve(metric);
+      });
+    },{threshold:.5});
+    document.querySelectorAll('.metric').forEach(metric=>metricObserver.observe(metric));
+    reducedMotion.addEventListener('change',event=>{
+      if(event.matches){document.querySelectorAll('.reveal-ready').forEach(el=>el.classList.add('is-revealed'));revealObserver.disconnect();}
+    });
+  }
+}
+
