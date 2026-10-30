@@ -1,0 +1,7 @@
+.git/
+.openai/
+.vercel/
+tmp/
+node_modules/
+.env
+.env.*

@@ -12,6 +12,10 @@ English is the main page at `/`; translated French and German versions are at `/
 
 The theme toggle switches between the dark charcoal/cyan design and the original cream/orange light palette with serif accents. The choice is saved locally and applied before rendering on every language route. No cookies or server storage are used.
 
+Dark mode is the default for new visitors. A returning visitor's explicitly selected theme is remembered.
+
+For Vercel, import the repository and use the included `vercel.json`: no framework, dependency installation, or build step is required, and the output directory is `dist`. All three language routes are included. After claiming a temporary deployment, connect the GitHub repository in Vercel to enable deployments from future pushes.
+
 After editing the English page or `content/translations.json`, run `python localize.py` to regenerate the static translated pages and shared locale data. Common interactive UI lives in `dist/i18n.js` and `dist/theme.js`; theme styling is in `dist/theme.css`.
 
 Project content is in `dist/app.js`; profile, experience, and contact content are in `dist/index.html`; the complete design and responsive layouts are in `dist/interface.css`. No runtime dependencies, API keys, tracking, or external fonts are required.
